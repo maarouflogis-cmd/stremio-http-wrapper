@@ -11,7 +11,7 @@ const engine = require('./src/engine')
 
 const PORT = Number(process.env.PORT || 7000)
 const HOST = process.env.HOST || '0.0.0.0'
-const PUBLIC_URL = (process.env.PUBLIC_URL || process.env.RENDER_EXTERNAL_URL || '').replace(/\/+$/, '')
+const PUBLIC_URL = (process.env.PUBLIC_URL || process.env.RENDER_EXTERNAL_URL || (process.env.SPACE_HOST ? 'https://' + process.env.SPACE_HOST : '')).replace(/\/+$/, '')
 
 const app = express()
 app.set('trust proxy', true)
