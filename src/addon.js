@@ -15,6 +15,7 @@ const manifest = {
   id: 'org.omar.stremio-http-wrapper',
   version: pkg.version,
   name: 'Migeloforreal',
+  logo: (process.env.PUBLIC_URL || process.env.RENDER_EXTERNAL_URL || (process.env.SPACE_HOST ? 'https://' + process.env.SPACE_HOST : '')).replace(/\/+$/, '') + '/static/logo.png',
   description: '🎬 Migeloforreal turns every torrent and magnet link into a fast, smooth HTTP stream that plays in any app. Plug in your favourite add-ons, press play, and skip anywhere in the video instantly. No torrent client, no waiting, just watch.',
   resources: [
     'catalog',

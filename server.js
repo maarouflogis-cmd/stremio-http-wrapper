@@ -28,6 +28,7 @@ function baseUrl (req) {
 /* ------------------------------------------------------------ pages */
 app.get('/', (_req, res) => res.redirect('/configure'))
 app.get('/configure', (_req, res) => res.type('html').send(configurePage(manifest, null)))
+app.use('/static', express.static(require('path').join(__dirname, 'public')))
 app.get('/health', (_req, res) => res.json({ ok: true, version: manifest.version }))
 app.get('/stats', (req, res) => {
   if (PLAY_SECRET && req.query.key !== PLAY_SECRET) return res.status(403).json({ err: 'forbidden' })

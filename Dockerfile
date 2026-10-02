@@ -8,6 +8,7 @@ COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && npm cache clean --force
 COPY server.js ./
 COPY src ./src
+COPY public ./public
 RUN mkdir -p /cache && chown node:node /cache
 USER node
 VOLUME /cache
