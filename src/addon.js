@@ -14,15 +14,15 @@ const ID_PREFIX = 'wtorrent:'
 const manifest = {
   id: 'org.omar.stremio-http-wrapper',
   version: pkg.version,
-  name: 'HTTP Torrent Wrapper',
-  description: 'Wraps your other torrent add-ons: every torrent / magnet stream they return is turned into a normal HTTP link served by this add-on (with seeking). HTTP streams pass through unchanged. You can also paste your own magnet links.',
+  name: 'Migeloforreal',
+  description: '🎬 Migeloforreal turns every torrent and magnet link into a fast, smooth HTTP stream that plays in any app. Plug in your favourite add-ons, press play, and skip anywhere in the video instantly. No torrent client, no waiting, just watch.',
   resources: [
     'catalog',
     { name: 'meta', types: ['movie'], idPrefixes: [ID_PREFIX] },
     { name: 'stream', types: ['movie', 'series', 'anime', 'other'], idPrefixes: ['tt', 'kitsu', 'tmdb:', 'mal:', 'anilist:', 'anidb:', ID_PREFIX] }
   ],
   types: ['movie', 'series', 'anime', 'other'],
-  catalogs: [{ type: 'movie', id: 'wrapper-my-torrents', name: 'My torrents (HTTP)' }],
+  catalogs: [{ type: 'movie', id: 'wrapper-my-torrents', name: 'Migeloforreal' }],
   behaviorHints: { configurable: true, configurationRequired: true },
   // Used by Stremio / the SDK to know the add-on has settings. Our own page at /configure handles them.
   config: [
@@ -106,7 +106,7 @@ function convertStream (s, upstreamName, base) {
   const bh = Object.assign({}, s.behaviorHints || {})
   bh.bingeGroup = 'httpwrap|' + (bh.bingeGroup || upstreamName)
   const out = {
-    name: '⚡HTTP ' + (s.name || upstreamName),
+    name: '⚡Migeloforreal\n' + (s.name || upstreamName),
     title: s.title || s.description || '',
     description: s.description || s.title || '',
     url: playUrl(base, t.infoHash, t.fileIdx, bh.filename),
@@ -161,10 +161,10 @@ async function directStreams (source, base) {
   }
   const label = info.name || info.infoHash
   if (!files || !files.length) {
-    return [{ name: '⚡HTTP torrent', title: label + '\n(largest file)', description: label + '\n(largest file)', url: playUrl(base, info.infoHash, 'auto', info.name), behaviorHints: { bingeGroup: 'httpwrap|' + info.infoHash } }]
+    return [{ name: '⚡Migeloforreal', title: label + '\n(largest file)', description: label + '\n(largest file)', url: playUrl(base, info.infoHash, 'auto', info.name), behaviorHints: { bingeGroup: 'httpwrap|' + info.infoHash } }]
   }
   return playableFiles(files).map(f => ({
-    name: '⚡HTTP torrent',
+    name: '⚡Migeloforreal',
     title: `${f.name}\n💾 ${formatBytes(f.length)}`,
     description: `${f.name}\n💾 ${formatBytes(f.length)}`,
     url: playUrl(base, info.infoHash, f.idx, f.name),

@@ -1,4 +1,4 @@
-# HTTP Torrent Wrapper – a Stremio add-on
+# Migeloforreal – a Stremio add-on
 
 This add-on sits **in front of your other torrent add-ons**.
 
@@ -9,7 +9,7 @@ This add-on sits **in front of your other torrent add-ons**.
   over HTTP, with **seeking** (HTTP Range / `206 Partial Content`) and the right `Content-Type`.
 * Streams that are already HTTP (or YouTube, etc.) are passed through unchanged.
 * You can also paste your **own magnet links / info hashes / .torrent URLs**. They show up in
-  Discover → Movies → **"My torrents (HTTP)"**.
+  Discover → Movies → **"Migeloforreal"**.
 
 Why? Devices or apps that cannot play torrents (some TVs, web player, external players, slow phones) can play
 plain HTTP. The torrent work is done by your server, not by the device.
@@ -65,7 +65,7 @@ wrapper calls it directly using the URL you pasted.
 
 ### Paste a magnet (direct option)
 
-Put the magnet in box 2 of the configure page, install, then go to **Discover → Movies → "My torrents (HTTP)"**.
+Put the magnet in box 2 of the configure page, install, then go to **Discover → Movies → "Migeloforreal"**.
 Open the item and press play. Supported inputs:
 
 * `magnet:?xt=urn:btih:<hash>&dn=<name>&tr=<tracker>...` (hex or base32 hash)

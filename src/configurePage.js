@@ -27,7 +27,7 @@ module.exports = function configurePage (manifest, current) {
 
 <label for="magnets">2. (Optional) Your own magnet links / info hashes / .torrent URLs, one per line</label>
 <textarea id="magnets" placeholder="magnet:?xt=urn:btih:..."></textarea>
-<div class="hint">They appear in Discover → Movies → "My torrents (HTTP)".</div>
+<div class="hint">They appear in Discover → Movies → "Migeloforreal".</div>
 
 <label><input type="checkbox" id="keep"> Also show the original torrent streams (next to the HTTP ones)</label>
 
